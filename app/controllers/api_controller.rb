@@ -1,5 +1,5 @@
 class ApiController < ApplicationController
-  include Authenticable
+  # include Authenticable
   include ErrorRenderable
 
   self.error_partial = "shared/error"
