@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get "home" => "home#index"
     resources :configurations, only: %i[show update]
+    resources :categories
   end
 
   namespace :front do
