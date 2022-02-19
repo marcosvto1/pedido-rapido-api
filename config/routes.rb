@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get "home" => "home#index"
     resources :configurations, only: %i[show update]
     resources :categories
+    resources :employees
     resources :products
   end
 
