@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :configurations, only: %i[show update]
     resources :categories
     resources :employees
+    resources :products
   end
 
   namespace :front do
