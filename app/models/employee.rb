@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class Employee < ActiveRecord::Base
   extend Devise::Models
+  include Searchable
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

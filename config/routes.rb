@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :employees
     resources :products
+    get "dashboard" => "dashboard#index"
   end
 
   namespace :front, defaults: { format: :json } do
