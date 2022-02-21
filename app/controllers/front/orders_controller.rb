@@ -41,7 +41,7 @@ module Front
 
     def order_params
       order_param = params.require(:order).permit(:table, :detail, :status, :employee_id, order_items_attributes: [:quantity, :product_id])
-      order_param.merge!({ employee_id: 1 })
+      order_param.merge!({ employee_id: current_user.id })
       order_param
     end
   end
