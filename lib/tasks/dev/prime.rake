@@ -6,139 +6,126 @@ if Rails.env.development? || Rails.env.test?
       Employee.create!(name: "Carlos", email: "attendant@attendant.com", type_profile: :attendant, password: "atendente")
       Employee.create!(name: "Kaio", email: "cook@cook.com", type_profile: :cook, password: "cozinheiro")
 
-      category = Category.create!(title: "Entradas")
-      category.image.attach(
-        io: File.open("storage/categories_images/entradas.png"),
-        filename: "entradas.png",
-      )
-
-      salada_mista = Product.create!(
-        name: "Salada Mista",
-        description: "Cenoura, vagem, batata, alface, tomate, brocolis, presunto, mussarela, ovo de codorna, palmito, azeitona, ervilha, aspargo e salaminho. Servido com o molho a sua escolha: vinagrete ou mostarda e mel.",
-        price: 49.30,
-        time_to_prepare: 10,
-        category_id: category.id,
-      )
-
-      salada_mista.image.attach(
-        io: File.open("storage/products_images/salada_mista.jpg"),
-        filename: "salada_mista.jpg",
-      )
-
-      salpicao = Product.create!(name: "Salpicão", time_to_prepare: 10, description: "Cenoura, batata-palha, pimentão, cebola, presunto, frango, maionese.", price: 50.50, category_id: category.id)
-      salpicao.image.attach(
-        io: File.open("storage/products_images/salpicao.jpg"),
-        filename: "salpicao.jpg",
-      )
-
-      salad = Product.create!(name: "CAESARS SALAD", time_to_prepare: 10, description: "Alface, tomate, croûnts, parmesão, frango servidos com molho a sua escolha, mostarda e mel ou vinagrete.", price: 50.50, category_id: category.id)
-      salad.image.attach(
-        io: File.open("storage/products_images/caesar_salad.jpeg"),
-        filename: "caesar_salad.jpeg",
-      )
-
-      category = Category.create!(title: "Pratos Especiais")
-      category.image.attach(
-        io: File.open("storage/categories_images/especiais.png"),
-        filename: "especiais.png",
-      )
-
-      file_medalhao = Product.create!(
-        name: "File Medalhão",
-        time_to_prepare: 60,
-        description: "Medalhões de filé mignon grelhados, envolvidos com fatias de bacon, molho madeira com champignon, arroz piemontês (Presunto, muçarela e molho branco) e purê de batatas.",
-        price: 80.50, category_id: category.id,
-      )
-      file_medalhao.image.attach(
-        io: File.open("storage/products_images/medalhao.jpg"),
-        filename: "medalhao.jpg",
-      )
-
-      file_parme = Product.create!(
-        name: "File Parmegiana",
-        time_to_prepare: 60,
-        description: "Filé mignon à  milanesa em molho ao sugo, presunto e muçarela gratinados e espaguete salteado na manteiga com salsa..",
-        price: 80.50, category_id: category.id,
-      )
-      file_parme.image.attach(
-        io: File.open("storage/products_images/parmegiana.jpg"),
-        filename: "parmegiana.jpg",
-      )
-
-      touche = Product.create!(
-        name: "File a Touche",
-        time_to_prepare: 60,
-        description: "Filé mignon ao molho madeira com champignon, creme de aspargo e palmito, guarnição francesa ( presunto, ervilha, batata palha e cebola), pure de batata, cheiro verde e arroz com brócolis.",
-        price: 97, category_id: category.id,
-      )
-
-      touche.image.attach(
-        io: File.open("storage/products_images/touche.jpeg"),
-        filename: "touche.jpeg",
-      )
-
-      category = Category.create!(title: "Não Alcoólicos")
-      category.image.attach(
-        io: File.open("storage/categories_images/nao_alcoolicas.png"),
-        filename: "nao_alcoolicas.png",
-      )
-
-      ref = Product.create!(
-        name: "Guaraná Antartica",
-        time_to_prepare: 60,
-        description: "Lata 350 ML",
-        price: 8.70,
-        category_id: category.id,
-      )
-
-      ref.image.attach(
-        io: File.open("storage/products_images/quarana.png"),
-        filename: "quarana.png",
-      )
-
-      coca = Product.create!(
-        name: "Coca Cola",
-        time_to_prepare: 0,
-        description: "Lata 350 ML",
-        price: 8.70,
-        category_id: category.id,
-      )
-
-      coca.image.attach(
-        io: File.open("storage/products_images/coca.jpg"),
-        filename: "coca.jpg",
-      )
-
-      zero = Product.create!(
-        name: "Coca Cola Zero",
-        time_to_prepare: 0,
-        description: "Lata 350 ML",
-        price: 8.70,
-        category_id: category.id,
-      )
-
-      zero.image.attach(
-        io: File.open("storage/products_images/cocazero.jpg"),
-        filename: "cocazero.jpg",
-      )
-
       category = Category.create!(title: "Pratos Principais")
       category.image.attach(
-        io: File.open("storage/categories_images/principais.png"),
-        filename: "principais.png",
+        io: File.open("public/products_images/pratos_principais.jpg"),
+        filename: "pratos_principais.jpg",
       )
 
-      lombo = Product.create!(
-        name: "LOMBO GRENADINE",
+      lombo_mineira = Product.create!(
+        name: "Lombo à Mineira",
         time_to_prepare: 120,
-        description: "Lombo suíno grelhado com bacon, arroz à grega (Presunto, pimentão, cenoura e uva passas), batata palha, farofa de presunto e ovo e cheiro verde.",
-        price: 82.70,
+        description: "Lombo suíno grelhado, arroz branco, tutu de feijão, couve refogada, ovo frito mal passado, banana frita, bacon e batata-palha.",
+        price: 83.10,
         category_id: category.id,
       )
 
-      lombo.image.attach(
-        io: File.open("storage/products_images/lombo.jpg"),
-        filename: "lombo.jpg",
+      lombo_mineira.image.attach(
+        io: File.open("public/products_images/lombo_a_mineira.jpg"),
+        filename: "lombo_a_mineira.jpg",
+      )
+
+      espaguete_bolonhesa = Product.create!(
+        name: "Espaguete Bolonhesa",
+        time_to_prepare: 240,
+        description: "Molho bolonhesa em ragu ou pedaços de filé mignon, cebola, cheiro verde e creme de leite",
+        price: 54.00,
+        category_id: category.id,
+      )
+
+      espaguete_bolonhesa.image.attach(
+        io: File.open("public/products_images/espaguete_a_bolonhesa.jpg"),
+        filename: "espaguete_a_bolonhesa.jpg",
+      )
+
+      frango_kiev = Product.create!(
+        name: "Frango à Kiev",
+        time_to_prepare: 360,
+        description: "Peito de frango empanado recheado com creme de catupiry e servido com arroz piemontês (Presunto, muçarela e molho branco), palmito, purê de batata e batata-palha.",
+        price: 69.80,
+        category_id: category.id,
+      )
+
+      frango_kiev.image.attach(
+        io: File.open("public/products_images/kiev.jpg"),
+        filename: "kiev.jpg",
+      )
+
+      category = Category.create!(title: "Sobremesas")
+      category.image.attach(
+        io: File.open("public/products_images/sobremesas.png"),
+        filename: "sobremesas.png",
+      )
+
+      creme_mamao_papaya = Product.create!(
+        name: "Creme Mamão Papaya",
+        time_to_prepare: 60,
+        description: "Sorvete de creme batido com mamão papaya e creme de cassis.",
+        price: 21.30,
+        category_id: category.id,
+      )
+
+      creme_mamao_papaya.image.attach(
+        io: File.open("public/products_images/creme_de_mamao_papaya.png"),
+        filename: "creme_de_mamao_papaya.png",
+      )
+
+      quindim = Product.create!(
+        name: "Quindim",
+        time_to_prepare: 60,
+        description: "Quindim.",
+        price: 13.00,
+        category_id: category.id,
+      )
+
+      quindim.image.attach(
+        io: File.open("public/products_images/quindim.jpg"),
+        filename: "quindim.jpg",
+      )
+
+      category = Category.create!(title: "Carta de Vinhos")
+      category.image.attach(
+        io: File.open("public/products_images/carta_de_vinhos.jpg"),
+        filename: "carta_de_vinhos.jpg",
+      )
+
+      alamos = Product.create!(
+        name: "Alamos Malbec Rose",
+        time_to_prepare: 60,
+        description: "Vinho Rosé 750 ml - Ótimo rosado de Catena Zapata, este Malbec é encorpado e marcante, com bouquet exuberante de frutas maduras, muito fresco e saboroso no palato.",
+        price: 168.00,
+        category_id: category.id,
+      )
+
+      alamos.image.attach(
+        io: File.open("public/products_images/alamos_malbec_rose.jpg"),
+        filename: "alamos_malbec_rose.jpg",
+      )
+
+      uxmal = Product.create!(
+        name: "Uxmal Syrah - Malbec TT",
+        time_to_prepare: 60,
+        description: "Vinho tinto 750 ml - Uxmal Syrah Malbec é um verdadeiro achado, Intenso, cheio de fruta e com delicioso toque de carvalho, é um ótimo Malbec no melhor estilo argentino. Na boca é rico, concentrado e macio, com uma elegância e complexidade.",
+        price: 140.00,
+        category_id: category.id,
+      )
+
+      uxmal.image.attach(
+        io: File.open("public/products_images/uxmal-syrah-malbec.jpg"),
+        filename: "uxmal-syrah-malbec.jpg",
+      )
+
+      clos = Product.create!(
+        name: "Clos de los Siete TT",
+        time_to_prepare: 60,
+        description: "Vinho tinto Malbec 750 ml - 2011 Frutas maduras, especiarias e tosta no nariz, com certa intensidade. Taninos macios, moderada acidez e amadeirado em boca. Aeração instantânea.",
+        price: 159.48,
+        category_id: category.id,
+      )
+
+      clos.image.attach(
+        io: File.open("public/products_images/clos_de_los_siete.png"),
+        filename: "clos_de_los_siete.png",
       )
     end
   end
