@@ -1,4 +1,6 @@
 class Category < ApplicationRecord
+  include Searchable
+
   validates :title, presence: true, uniqueness: { case_sensitive: false }
   has_many :products
   has_one_attached :image
