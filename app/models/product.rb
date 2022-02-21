@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  include Searchable
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :description, presence: true
   belongs_to :category
