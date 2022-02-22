@@ -24,8 +24,6 @@ module Admin
     def save_category!
       @category.save!
       render :show
-    rescue
-      render_error fields: @category.errors.messages
     end
 
     def category_params
